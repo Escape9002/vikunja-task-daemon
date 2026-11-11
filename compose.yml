@@ -1,0 +1,15 @@
+services:
+  vikunja-daemon:
+    build: .
+    container_name: vikunja-task-daemon
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      - VIKUNJA_API_URL=${URL}
+      - VIKUNJA_API_TOKEN=${API_TOKEN}
+      - TIMEZONE=Europe/Berlin
+      - CHECK_INTERVAL_SECS=30
+      - RUST_LOG=info
+    volumes:
+      # Mount configuration file as read-only
+      - ./config.yaml:/etc/vikunja-daemon/config.yaml:ro

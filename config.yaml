@@ -1,0 +1,26 @@
+tasks:
+  # --------------------------------------------------------------------------
+  # Project 1: Operations
+  # Must match the exact title of the parent project in Vikunja
+  # --------------------------------------------------------------------------
+  Operations:
+    # Task Key (internal unique identifier)
+    EMF:
+      # Optional: Name of child project for old uncompleted tasks. Defaults to "Backlog"
+      backlog_project_name: "Backlog"
+      repetition: "1 week"
+      due_day: "wednesday"               # monday, tuesday, wednesday, thursday, friday, saturday, sunday
+      due_time: "15:37"               # 24-hour format (HH:MM)
+      importance: "HIGH"              # NONE (0), LOW (1), MEDIUM (2), HIGH (3), URGENT (4), DO_NOW (5)
+      name_template: "{calender_week} - EMF"
+      pre_generation: 1
+
+    WEEKLY_REPORT:
+      # If backlog_project_name is omitted, it automatically defaults to "Backlog"
+      repetition: "1 week"
+      due_day: "friday"
+      due_time: "14:00"
+      importance: "MEDIUM"
+      name_template: "{calender_week} - Weekly Ops Status Report"
+      pre_generation: 3
+
